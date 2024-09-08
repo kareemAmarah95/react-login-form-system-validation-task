@@ -1,36 +1,34 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
-
-import Home from "./Home"; // Replace with the correct path
-import Profile from "./pages/Profile"; // Replace with the correct path
-import ProfileHome from "./pages/ProfileHome"; // Replace with the correct path
-import Login from "./Login"; // Replace with the correct path
-import { useSelector } from "react-redux"; // Assuming you're using Redux to manage authentication state
-
-// ProtectedRoutes Component
-const ProtectedRoutes = () => {
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated); // Assuming Redux manages auth state
-
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
-};
+import Home from "./Home";
+import Profile from "./pages/Profile";
+import ProfileHome from "./pages/ProfileHome";
+import Login from "./Login";
+import { RouterProvider } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
+import Layout from "./utils/layout";
 
 function App() {
+  const router = createHashRouter([
+    {
+      element: <Layout />,
+      children: [
+        { path: "", element: <Home /> },
+        { path: "login", element: <Login /> },
+        { path: "profile", element: <Profile /> },
+        { path: "profileHome", element: <ProfileHome /> },
+      ],
+    },
+  ]);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<ProtectedRoutes />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-        </Route>
-        <Route path="/" element={<ProfileHome />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    // <HashRouter>
+    //   <Routes>
+    //     <Route path="/" element={<ProfileHome />} />
+    //     <Route path="/home" element={<Home />} />
+    //     <Route path="/about" element={<div>About</div>} />
+    //     <Route path="/login" element={<Login />} />
+    //   </Routes>
+    // </HashRouter>
+
+    <RouterProvider router={router} />
   );
 }
 

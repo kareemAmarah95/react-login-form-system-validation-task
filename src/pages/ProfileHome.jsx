@@ -1,5 +1,5 @@
 const ProfileHome = () => {
-  return <div className="text-white">ProfileHome</div>;
+  return <div style={{ color: "white" }}>ProfileHome</div>;
 };
 
 export default ProfileHome;
