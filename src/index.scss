@@ -34,7 +34,7 @@ h2 {
     border-radius: 20px;
     height: 500px;
     padding: 40px; // زيادة الحشو لجعل النموذج أكبر
-    width: 25vw; // نصف عرض النافذة
+    width: 80%; // نصف عرض النافذة
     // height: 50vh; // نصف ارتفاع النافذة
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // إضافة ظل للنموذج لجعله يبرز
 
@@ -52,7 +52,7 @@ h2 {
     label {
       display: block;
       color: $text-white;
-      margin-bottom: 5px; // إضافة مسافة أسفل التسمية
+      margin: 13px 0px;
     }
 
     input {
@@ -79,9 +79,9 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    color: $bg-black;
+    color: black;
     transition: background-color 0.3s;
-
+    margin: 23px 0px;
     &:hover {
       background-color: #d4af37;
     }
