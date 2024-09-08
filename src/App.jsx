@@ -4,7 +4,7 @@ import ProfileHome from "./pages/ProfileHome";
 import Login from "./Login";
 import { RouterProvider } from "react-router-dom";
 import { createHashRouter } from "react-router-dom";
-import Layout from "./utils/layout";
+import Layout from "./utils/Layout";
 
 function App() {
   const router = createHashRouter([
