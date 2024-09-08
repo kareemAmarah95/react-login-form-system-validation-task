@@ -1,0 +1,89 @@
+$bg-black: black;
+$text-white: white;
+
+* {
+  font-family: "system-ui", sans-serif;
+  box-sizing: border-box; // لضمان حساب الحشو والحدود داخل الحجم الكلي
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #191919;
+}
+
+h2 {
+  text-align: center;
+  color: $text-white;
+  margin-bottom: 20px; // إضافة مسافة أسفل العنوان
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // ارتفاع النافذة بالكامل
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $bg-black;
+    border-radius: 20px;
+    height: 500px;
+    padding: 40px; // زيادة الحشو لجعل النموذج أكبر
+    width: 25vw; // نصف عرض النافذة
+    // height: 50vh; // نصف ارتفاع النافذة
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // إضافة ظل للنموذج لجعله يبرز
+
+    div {
+      width: 100%; // تتيح للصورة أن تأخذ كامل عرض النموذج
+      height: auto; // يناسب الصورة حسب العرض
+
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    label {
+      display: block;
+      color: $text-white;
+      margin-bottom: 5px; // إضافة مسافة أسفل التسمية
+    }
+
+    input {
+      border: none;
+      border: 1px solid #fceb46;
+      width: 100%; // جعل المدخلات تأخذ كامل عرض النموذج
+      padding: 10px;
+      background-color: transparent;
+      color: $text-white; // لضمان وضوح النص داخل المدخلات
+      border-radius: 5px;
+      font-size: 16px; // حجم خط أكبر للوضوح
+
+      &:focus {
+        outline: none;
+        border-color: #d4af37; // تغيير لون الحدود عند التركيز
+      }
+    }
+  }
+
+  button {
+    padding: 10px;
+    background-color: #fceb46;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: $bg-black;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #d4af37;
+    }
+  }
+}
